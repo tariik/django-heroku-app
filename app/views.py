@@ -1,13 +1,23 @@
 from django.shortcuts import render
 from django.http import HttpResponse
-
-from .models import Greeting
+from pprint import pprint  
+from django.core import serializers
+from .models import User
 
 # Create your views here.
 def home(request):
     # return HttpResponse('Hello from Python!')
-    return render(request, "home.html")
-
+    
+    users = User.objects.all()
+    text = 'hello world'
+        
+    return render(request, "home.html", 
+        {
+            'users':users,
+            'text':text
+        }
+    )
+    
 
 def db(request):
 

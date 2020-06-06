@@ -2,5 +2,16 @@
 {% load static %}
 
 {% block content %}
-<h1>Home page</h1>
+<h1>Home page {{text}}</h1>
+<table>
+    {% for row in users %}
+    <tr>
+       <td><a href=""></a></td>
+       <td>{{ row.name }}</td>
+       <td>{{ row.email }}</td>
+    </tr>
+ {% endfor %}
+</table>
+
+ 
 {% endblock %}
